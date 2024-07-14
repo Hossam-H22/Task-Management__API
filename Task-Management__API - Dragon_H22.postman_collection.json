@@ -1,0 +1,569 @@
+{
+	"info": {
+		"_postman_id": "a5c5c040-7075-4505-8b8c-c907263b055f",
+		"name": "Task-Management__API - Dragon_H22",
+		"description": "Hey! there, I'm [Hossam Hatem](https://linktr.ee/hossam_h22)\n\nWelcom to [Task Management API](https://github.com/Hossam-H22/Task-Management__API)\n\n<img src=\"https://content.pstmn.io/a1a20598-49ba-439a-a003-16950e7ca23b/bGFzdCAtIEhIIERyYWdvbi5qcGc=\" width=\"255\" height=\"254\">\n\nbearerKey = DragonH22__",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23533987"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "create category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{bearerKey}}{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jobs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/category/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{bearerKey}}{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Studying\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/category/6693d568bdd7ff69a3414351",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"6693d568bdd7ff69a3414351"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{bearerKey}}{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/category/6693d568bdd7ff69a3414351",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"6693d568bdd7ff69a3414351"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "createdBy,taskId",
+									"disabled": true
+								},
+								{
+									"key": "fields",
+									"value": "name",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{bearerKey}}{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "20",
+									"disabled": true
+								},
+								{
+									"key": "fields",
+									"value": "_id,name",
+									"description": "select fields",
+									"disabled": true
+								},
+								{
+									"key": "details",
+									"value": "createdBy",
+									"description": "get details of user",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "create task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{bearerKey}}{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"react hooks\",\r\n    \"body\": \"youtube videos playlist\",\r\n    \"categoryId\": \"6693d568bdd7ff69a3414351\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/task/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{bearerKey}}{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isShared\": \"true\",\r\n    \"categoryId\": \"6693d568bdd7ff69a3414351\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/task/6693d831bdd7ff69a3414383",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task",
+								"6693d831bdd7ff69a3414383"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all tasks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{bearerKey}}{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/task",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "details",
+									"value": "categoryId,createdBy",
+									"description": "get details of [ categoryId, sybcategoryId, brandId, reviews ]",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "name",
+									"description": "sort using any field",
+									"disabled": true
+								},
+								{
+									"key": "fields",
+									"value": "name",
+									"description": "select fields",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "nod",
+									"disabled": true
+								},
+								{
+									"key": "isShared[eq]",
+									"value": "true",
+									"description": "filter with any field by using one of operators -> [ gt, gte, lt, lte, in, nin, eq, neq ]",
+									"disabled": true
+								},
+								{
+									"key": "categoryId[eq]",
+									"value": "64e1256e7cb584e6917811f8",
+									"description": "filter with any field by using one of operators -> [ gt, gte, lt, lte, in, nin, eq, neq ]",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get task",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{bearerKey}}{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/task/6693ba754f27ae7a5c1a4a27?details=createdBy",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"task",
+								"6693ba754f27ae7a5c1a4a27"
+							],
+							"query": [
+								{
+									"key": "details",
+									"value": "createdBy"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "forget password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hosam.hatem222@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/forgetPassword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"forgetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hosam.hatem222@gmail.com\",\r\n    \"password\": \"Hosam@123\",\r\n    \"cPassword\": \"Hosam@123\",\r\n    \"forgetCode\": \"7729\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/resetPassword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"Deago\",\r\n    \"email\": \"x.huker22@gmail.com\",\r\n    \"password\": \"Deago@123\",\r\n    \"cPassword\": \"Deago@123\",\r\n    \"frontUrl\": \"https://www.google.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signup",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"x.huker22@gmail.com\",\r\n    \"password\": \"Deago@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "get user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{bearerKey}}{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "userName",
+									"description": "select fields",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update password",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "{{bearerKey}}{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"Hosam@456\",\r\n    \"newPassword\": \"Hosam@123\",\r\n    \"cPassword\": \"Hosam@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/updatePassword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzdmMDlmZTg0NDMzOTUwNDdmZDdmNCIsImlzTG9nZ2VkSW4iOnRydWUsInJvbGUiOiJVc2VyIiwiaWF0IjoxNjkwODI0ODk2LCJleHAiOjE3MjIzNjA4OTZ9.UgJXSLXkc142_hG7KSlvlgJ1MLfVkMbEL-JFOF_z96c",
+			"type": "string"
+		},
+		{
+			"key": "bearerKey",
+			"value": "DragonH22__",
+			"type": "string"
+		}
+	]
+}
