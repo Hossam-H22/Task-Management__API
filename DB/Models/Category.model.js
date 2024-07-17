@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 
 const categorySchema = new Schema({
     name: { type: String, required: true, trim: true, lowercase: true,},
+    color: String,
     createdBy: { type: Types.ObjectId, ref:'User', required: true, },
     isDeleted: { type: Boolean, default: false, },
 }, {

@@ -44,10 +44,12 @@ export const createCategory = asyncHandler(async (req, res, next) => {
         return next(new Error(`Duplicate category name - ${name}`, { cause: 409 }));
     }
 
+    req.body.name = req.body.name.toLowerCase();
+
 
     // add new photo data to database
     const category = await categoryModel.create({
-        name,
+        ...req.body,
         createdBy: req.user._id,
     });
 
@@ -79,6 +81,10 @@ export const updateCategory = asyncHandler(async (req, res, next) => {
         }
     }
 
+    if(req.body.color){
+        category.color = req.body.color;
+    }
+
     if(req.body.isDeleted){
         const tasks = await taskModel.find({ isDeleted: false, categoryId });
         if(req.body.isDeleted=="true" && tasks?.length){
@@ -86,6 +92,7 @@ export const updateCategory = asyncHandler(async (req, res, next) => {
         }
         category.isDeleted = (req.body.isDeleted=="true")? true : false;
     }
+
 
     await category.save();
     return res.status(201).json({ message: "Done", category });

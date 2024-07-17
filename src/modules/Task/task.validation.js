@@ -21,6 +21,7 @@ export const createTask = joi.object({
         joi.string().min(5),
     ).required(),
     isShared: joi.boolean(),
+    deadline: joi.date().greater(Date.now()),
 }).required();
 
 
@@ -32,7 +33,7 @@ export const updateTask = joi.object({
         joi.array().items(joi.string()),
         joi.string().min(5),
     ),
-
+    deadline: joi.date().greater(Date.now()),
     isShared: joi.boolean(),
     isFinished: joi.boolean(),
     isDeleted: joi.boolean(),

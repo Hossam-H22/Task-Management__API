@@ -23,7 +23,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Jobs\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Study\",\r\n    \"color\": \"#fff\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -177,7 +177,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"react hooks\",\r\n    \"body\": \"youtube videos playlist\",\r\n    \"categoryId\": \"6693d568bdd7ff69a3414351\"\r\n}",
+							"raw": "{\r\n    \"name\": \"react hooks\",\r\n    \"body\": \"youtube videos playlist\",\r\n    \"categoryId\": \"6697703fc02850a453efbf5c\",\r\n    \"deadline\": \"2024-10-15\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

@@ -5,6 +5,7 @@ import mongoose from 'mongoose'
 const taskSchema = new Schema({
     name: { type: String, required: true, trim: true, lowercase: true, },
     body: [{ type: String, required: true, lowercase: true, }],
+    deadline: { type: Date },
     isShared: { type: Boolean, default: false, },
     isFinished: { type: Boolean, default: false, },
     isDeleted: { type: Boolean, default: false, },

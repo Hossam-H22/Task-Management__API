@@ -12,13 +12,6 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 
-// Cron jop
-// import schedule from 'node-schedule'
-
-// const job = schedule.scheduleJob('25 21 * * * *', function(){
-//     console.log('The answer to life, the universe, and everything!');
-// });
-
 
 initApp(app, express);
 app.listen(port, () => console.log(`app running on port ............... ${port}`));

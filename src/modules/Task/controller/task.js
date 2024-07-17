@@ -49,6 +49,10 @@ export const createTask = asyncHandler(async (req, res, next) => {
         return next(new Error(`Duplicate task name - ${name}`, { cause: 409 }));
     }
 
+    if(req.body.deadline){
+        req.body.deadline = new Date(req.body.deadline);
+    }
+
     const task = await taskModel.create({ 
         ...req.body,
         createdBy: req.user._id,
@@ -97,6 +101,10 @@ export const updateTask = asyncHandler(async (req, res, next) => {
 
     if(req.body.body){
         task.body = req.body.body;
+    }
+
+    if(req.body.deadline){
+        task.deadline = new Date(req.body.deadline);
     }
     
 
