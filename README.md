@@ -124,6 +124,11 @@ The project structure follows a modular pattern to enhance maintainability and r
 * **User**
   * `GET /user`: Retrieve details of a specific user.
   * `PATCH /user/updatePassword`: Update password of the user.
+* **Category**
+  * `GET /category`: Retrieve a list of categories (and retrieve their tasks depending on parameters).
+  * `GET /category/:id`: Retrieve details of a specific category (and retrieve their tasks depending on parameters).
+  * `POST /category`: Create a new category.
+  * `PUT /category/:id`: Update category details.
 * **Task**
   * `GET /task`: Retrieve a list of tasks.
   * `GET /task/:id`: Retrieve details of a specific task.
